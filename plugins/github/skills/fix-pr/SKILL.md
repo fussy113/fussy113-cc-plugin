@@ -153,7 +153,7 @@ git commit -m "<わかりやすいコミットメッセージ>"
 **返信の投稿**（レビューコメントに対するreply）:
 
 ```bash
-gh api repos/<owner>/<repo>/pulls/comments/<comment_databaseId>/replies \
+gh api repos/<owner>/<repo>/pulls/<PR番号>/comments/<comment_databaseId>/replies \
   -f body="<返信内容>"
 ```
 

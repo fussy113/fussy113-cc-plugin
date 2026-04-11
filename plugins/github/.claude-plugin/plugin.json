@@ -8,9 +8,5 @@
   "homepage": "https://github.com/fussy113",
   "repository": "https://github.com/fussy113/claude-code-marketplace",
   "keywords": ["github"],
-  "license": "MIT",
-  "commands": [
-    "./commands/review-pr.md",
-    "./commands/review-dependabot.md"
-  ]
+  "license": "MIT"
 }

@@ -1,3 +1,10 @@
+---
+name: review-pr
+description: 指定されたPR番号のプルリクエストをコード品質・セキュリティ・バグ・テストカバレッジの観点から包括的にレビューする
+argument-hint: "<PR番号>"
+allowed-tools: Bash(gh pr *)
+---
+
 # GitHub PR レビュー
 
 指定されたPR番号のプルリクエストを包括的にレビューしてください。

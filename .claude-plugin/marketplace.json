@@ -24,6 +24,5 @@
       "name": "context7",
       "source": "./plugins/context7"
     }
-  ],
-  "strict": true
+  ]
 }

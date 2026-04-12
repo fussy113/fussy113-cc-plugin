@@ -20,13 +20,13 @@ function parseArgs(argv) {
     }
 
     if (arg === "--plugin") {
-      options.plugin = argv[index + 1] ?? null;
+      options.plugin = readRequiredOptionValue(argv, index, "--plugin");
       index += 1;
       continue;
     }
 
     if (arg === "--skill") {
-      options.skill = argv[index + 1] ?? null;
+      options.skill = readRequiredOptionValue(argv, index, "--skill");
       index += 1;
       continue;
     }
@@ -39,6 +39,16 @@ function parseArgs(argv) {
   }
 
   return options;
+}
+
+function readRequiredOptionValue(argv, index, optionName) {
+  const value = argv[index + 1];
+
+  if (!value || value.startsWith("--")) {
+    throw new Error(`${optionName} には値が必要です`);
+  }
+
+  return value;
 }
 
 function countIndent(line) {
@@ -250,6 +260,20 @@ function ensureDirectory(directoryPath) {
   fs.mkdirSync(directoryPath, { recursive: true });
 }
 
+function collectGeneratedSkillNames(pluginRoot, directoryName) {
+  const root = path.join(pluginRoot, directoryName);
+
+  if (!fs.existsSync(root)) {
+    return [];
+  }
+
+  return fs
+    .readdirSync(root, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+}
+
 function writeIfChanged(filePath, nextContent, checkMode, changes) {
   const currentContent = fs.existsSync(filePath) ? fs.readFileSync(filePath, "utf8") : null;
 
@@ -265,6 +289,20 @@ function writeIfChanged(filePath, nextContent, checkMode, changes) {
 
   ensureDirectory(path.dirname(filePath));
   fs.writeFileSync(filePath, nextContent);
+}
+
+function removeIfExists(targetPath, checkMode, changes) {
+  if (!fs.existsSync(targetPath)) {
+    return;
+  }
+
+  changes.push(path.relative(process.cwd(), targetPath));
+
+  if (checkMode) {
+    return;
+  }
+
+  fs.rmSync(targetPath, { recursive: true, force: true });
 }
 
 function collectPlugins(pluginsRoot, targetPlugin) {
@@ -312,6 +350,7 @@ function syncPlugin(repoRoot, pluginName, targetSkill, checkMode, changes) {
   const pluginRoot = path.join(repoRoot, "plugins", pluginName);
   const sharedRoot = path.join(pluginRoot, "shared-skills");
   const skillNames = collectSharedSkills(sharedRoot, targetSkill);
+  const expectedSkillNames = new Set(skillNames);
 
   for (const skillName of skillNames) {
     const skillRoot = path.join(sharedRoot, skillName);
@@ -336,6 +375,26 @@ function syncPlugin(repoRoot, pluginName, targetSkill, checkMode, changes) {
       checkMode,
       changes,
     );
+  }
+
+  if (targetSkill) {
+    return;
+  }
+
+  for (const generatedSkillName of collectGeneratedSkillNames(pluginRoot, "skills")) {
+    if (expectedSkillNames.has(generatedSkillName)) {
+      continue;
+    }
+
+    removeIfExists(path.join(pluginRoot, "skills", generatedSkillName), checkMode, changes);
+  }
+
+  for (const generatedSkillName of collectGeneratedSkillNames(pluginRoot, "codex-skills")) {
+    if (expectedSkillNames.has(generatedSkillName)) {
+      continue;
+    }
+
+    removeIfExists(path.join(pluginRoot, "codex-skills", generatedSkillName), checkMode, changes);
   }
 }
 

@@ -1,0 +1,24 @@
+{
+  "name": "github",
+  "description": "Use for development on GitHub",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["github"],
+  "license": "MIT",
+  "skills": "./codex-skills/",
+  "interface": {
+    "displayName": "GitHub",
+    "shortDescription": "GitHub開発向けの共有skill集",
+    "developerName": "fussy113",
+    "category": "Developer Tools",
+    "defaultPrompt": [
+      "GitHub PR の CI 失敗を調査して修正して",
+      "Dependabot PR の影響をレビューして",
+      "変更内容からドラフト PR を作って"
+    ]
+  }
+}

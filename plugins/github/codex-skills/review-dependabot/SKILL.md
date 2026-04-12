@@ -1,14 +1,15 @@
 ---
 name: 'review-dependabot'
 description: 'DependabotによるPRを依存関係更新の観点から包括的にレビューする。セマンティックバージョン分析・Breaking Changes調査・セキュリティ脆弱性確認・プロジェクトへの影響調査を含む'
-argument-hint: '<PR番号>'
-allowed-tools: 'Bash(gh pr *) Grep'
 ---
 
 <!--
 このファイルは scripts/sync-skills.mjs により自動生成されています。
 編集は `plugins/github/shared-skills/review-dependabot` を更新してください。
 -->
+> 想定引数: `<PR番号>`
+> 推奨ツール: `gh`, `grep`
+
 # Dependabot PR レビュー
 
 DependabotによるPRを依存関係更新の観点から包括的にレビューしてください。

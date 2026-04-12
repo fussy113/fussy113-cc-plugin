@@ -1,0 +1,23 @@
+{
+  "name": "context7",
+  "description": "Use context7",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["context7"],
+  "license": "MIT",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Context7",
+    "shortDescription": "Context7 MCP を Codex から利用する plugin",
+    "developerName": "fussy113",
+    "category": "Developer Tools",
+    "defaultPrompt": [
+      "Context7 を使って最新ドキュメントを調べて",
+      "MCP 経由で Context7 を参照して実装案をまとめて"
+    ]
+  }
+}

@@ -1,14 +1,3 @@
----
-name: 'fix-pr'
-description: 'PRのCI失敗やレビューコメントを自動的に調査し、コード修正・コミット・コメント返信・スレッド解決を行う。GitHub CLIが必要'
-argument-hint: '[PR番号 (optional)]'
-allowed-tools: 'Bash(gh *) Bash(git *) Read Grep Glob Edit'
----
-
-<!--
-このファイルは scripts/sync-skills.mjs により自動生成されています。
-編集は `plugins/github/shared-skills/fix-pr` を更新してください。
--->
 # PR 修正・対応
 
 PRのCI失敗とレビューコメントを調査し、必要な修正を行い、コメントにreplyしてスレッドを解決します。

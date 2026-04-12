@@ -1,0 +1,11 @@
+name: 'review-dependabot'
+description: 'DependabotによるPRを依存関係更新の観点から包括的にレビューする。セマンティックバージョン分析・Breaking Changes調査・セキュリティ脆弱性確認・プロジェクトへの影響調査を含む'
+argument_hint: '<PR番号>'
+mode: 'manual'
+shared_tools:
+  - 'gh'
+  - 'grep'
+claude:
+  allowed_tools:
+    - 'Bash(gh pr *)'
+    - 'Grep'

@@ -1,0 +1,23 @@
+{
+  "name": "tools-for-mac",
+  "description": "Useful tools and hooks for macOS users",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["macos", "hooks", "notifications", "osascript"],
+  "license": "MIT",
+  "hooks": "./hooks/codex-hooks.json",
+  "interface": {
+    "displayName": "Tools for Mac",
+    "shortDescription": "macOS 向けの通知 hook 集",
+    "developerName": "fussy113",
+    "category": "Productivity",
+    "defaultPrompt": [
+      "macOS の通知 hook を有効にして",
+      "作業完了時に通知する hook を設定して"
+    ]
+  }
+}

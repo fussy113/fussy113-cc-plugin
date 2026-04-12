@@ -1,14 +1,15 @@
 ---
 name: 'quick-pr'
 description: '変更内容を元にブランチ作成、コミット、プッシュ、Draft PR作成を一括実行'
-argument-hint: '[branch_name (optional)]'
-allowed-tools: 'Bash(git *) Bash(gh *)'
 ---
 
 <!--
 このファイルは scripts/sync-skills.mjs により自動生成されています。
 編集は `plugins/github/shared-skills/quick-pr` を更新してください。
 -->
+> 想定引数: `[branch_name (optional)]`
+> 推奨ツール: `git`, `gh`
+
 # Quick PR
 
 現在の変更内容をもとに、新しいブランチの作成からDraft PRの作成までを一括で実行してください。

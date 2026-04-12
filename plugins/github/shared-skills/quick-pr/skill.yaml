@@ -1,0 +1,11 @@
+name: 'quick-pr'
+description: '変更内容を元にブランチ作成、コミット、プッシュ、Draft PR作成を一括実行'
+argument_hint: '[branch_name (optional)]'
+mode: 'manual'
+shared_tools:
+  - 'git'
+  - 'gh'
+claude:
+  allowed_tools:
+    - 'Bash(git *)'
+    - 'Bash(gh *)'

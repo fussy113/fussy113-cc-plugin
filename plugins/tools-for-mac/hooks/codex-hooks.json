@@ -1,0 +1,24 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./plugins/tools-for-mac/hooks/notification.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./plugins/tools-for-mac/hooks/stop.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

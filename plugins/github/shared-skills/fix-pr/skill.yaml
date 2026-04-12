@@ -1,0 +1,19 @@
+name: 'fix-pr'
+description: 'PRのCI失敗やレビューコメントを自動的に調査し、コード修正・コミット・コメント返信・スレッド解決を行う。GitHub CLIが必要'
+argument_hint: '[PR番号 (optional)]'
+mode: 'manual'
+shared_tools:
+  - 'gh'
+  - 'git'
+  - 'read'
+  - 'grep'
+  - 'glob'
+  - 'edit'
+claude:
+  allowed_tools:
+    - 'Bash(gh *)'
+    - 'Bash(git *)'
+    - 'Read'
+    - 'Grep'
+    - 'Glob'
+    - 'Edit'

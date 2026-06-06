@@ -18,12 +18,12 @@ get() {
   local key="$1"
   if command -v jq >/dev/null 2>&1; then
     printf '%s' "$input" | jq -r --arg k "$key" '.[$k] // empty' 2>/dev/null
-  else
-    printf '%s' "$input" \
-      | grep -o "\"$key\"[[:space:]]*:[[:space:]]*\"[^\"]*\"" \
-      | head -1 \
-      | sed 's/.*:[[:space:]]*"\(.*\)"/\1/'
+    return
   fi
+  printf '%s' "$input" \
+    | grep -oE "\"$key\"[[:space:]]*:[[:space:]]*(\"[^\"]*\"|true|false|null|[0-9.]+)" \
+    | head -1 \
+    | sed -E 's/^[^:]*:[[:space:]]*//; s/^"//; s/"$//'
 }
 
 dir="${HOME}/.claude/session-journal"
@@ -34,7 +34,14 @@ sid_short="${session_id:0:8}"
 
 cwd=$(get cwd)
 [ -z "$cwd" ] && cwd="$PWD"
-repo=$(basename "$cwd")
+# journal.sh と命名を一致させるため、repo 名は git トップレベル基準で決める。
+# (サブディレクトリで起動しても同一リポジトリの過去ジャーナルを拾えるように)
+toplevel=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)
+if [ -n "$toplevel" ]; then
+  repo=$(basename "$toplevel")
+else
+  repo=$(basename "$cwd")
+fi
 safe_repo=$(printf '%s' "$repo" | tr ' /' '__')
 
 # まず同じリポジトリの直近ジャーナルを優先し、無ければ全体の直近を使う。

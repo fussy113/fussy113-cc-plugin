@@ -1,6 +1,6 @@
 ---
 name: effort-router
-description: タスクの規模・不確実性・可逆性を判定し、最適なeffortレベル/モデル/fast/プランモード/dynamic workflowを推奨してトークンを節約する。タスク着手前の見積もり、または「このタスクはどのeffortでやるべきか」と問われたときに使う
+description: タスクの規模・不確実性・可逆性・反復性を判定し、最適なeffortレベル/モデル/fast/プランモード/dynamic workflowを推奨してトークンを節約する。タスク着手前の見積もり、または「このタスクはどのeffortでやるべきか」と問われたときに使う
 argument-hint: "[タスクの説明 (optional)]"
 allowed-tools: Read Glob Grep Bash(git status:*) Bash(git diff:*)
 ---

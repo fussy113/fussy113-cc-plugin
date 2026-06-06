@@ -15,19 +15,25 @@
 
 set -u
 
+# ジャーナルにはブランチ名・コミットメッセージが含まれるため、
+# 共有環境で他ユーザーに読まれないよう作成物を 700/600 相当に制限する。
+umask 077
+
 input=$(cat)
 
-# JSON フィールド取得: jq があれば使い、無ければ簡易フォールバック
+# JSON フィールド取得: jq があれば使い、無ければ簡易フォールバック。
+# フォールバックは引用符付き文字列だけでなく boolean / 数値 / null も拾う
+# (stop_hook_active のような boolean を文字列前提で取りこぼさないため)。
 get() {
   local key="$1"
   if command -v jq >/dev/null 2>&1; then
     printf '%s' "$input" | jq -r --arg k "$key" '.[$k] // empty' 2>/dev/null
-  else
-    printf '%s' "$input" \
-      | grep -o "\"$key\"[[:space:]]*:[[:space:]]*\"[^\"]*\"" \
-      | head -1 \
-      | sed 's/.*:[[:space:]]*"\(.*\)"/\1/'
+    return
   fi
+  printf '%s' "$input" \
+    | grep -oE "\"$key\"[[:space:]]*:[[:space:]]*(\"[^\"]*\"|true|false|null|[0-9.]+)" \
+    | head -1 \
+    | sed -E 's/^[^:]*:[[:space:]]*//; s/^"//; s/"$//'
 }
 
 # 継続ループ中 (Stop フックが block した結果の再実行) は二重記録しない
@@ -48,13 +54,21 @@ sid_short="${session_id:0:8}"
 
 dir="${HOME}/.claude/session-journal"
 mkdir -p "$dir" 2>/dev/null || exit 0
+# 既にディレクトリが緩い権限で存在していた場合に備えて明示的に絞る
+chmod 700 "$dir" 2>/dev/null
 
 # 14日より古いジャーナルは掃除してファイル数を抑える
 find "$dir" -maxdepth 1 -name '*.md' -type f -mtime +14 -delete 2>/dev/null
 
 date_str=$(date +%Y-%m-%d)
 time_str=$(date +%H:%M)
-repo=$(basename "$cwd")
+# サブディレクトリで作業していてもリポジトリを一意に紐付けられるよう、
+# repo 名は git のトップレベルディレクトリ名を使う (cwd の basename ではなく)。
+toplevel=$(git rev-parse --show-toplevel 2>/dev/null)
+[ -n "$toplevel" ] || toplevel="$cwd"
+repo=$(basename "$toplevel")
+# git の出力をリポジトリルート基準にして、サブディレクトリ起動時の "../" 表記を避ける
+cd "$toplevel" 2>/dev/null || true
 branch=$(git branch --show-current 2>/dev/null)
 commits=$(git log --oneline -5 2>/dev/null)
 changed=$(git status --short 2>/dev/null | head -20)

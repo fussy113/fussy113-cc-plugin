@@ -3,12 +3,25 @@
   "extends": [
     "config:recommended"
   ],
-  "enabledManagers": ["github-actions", "mise"],
+  "enabledManagers": ["github-actions", "mise", "npm"],
   "platformAutomerge": true,
+  "timezone": "Asia/Tokyo",
+  "osvVulnerabilityAlerts": true,
+  "vulnerabilityAlerts": {
+    "automerge": true,
+    "labels": ["security"]
+  },
   "packageRules": [
     {
       "description": "minor / patch / digest は CI pass 後に自動マージ（major は手動PRのまま）",
       "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true
+    },
+    {
+      "description": "@anthropic-ai/claude-code は更新頻度が高いため、自動マージ対象の更新を週次にまとめる（security は vulnerabilityAlerts がスケジュールをバイパスして早期反映）",
+      "matchPackageNames": ["@anthropic-ai/claude-code"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "schedule": ["before 6am on monday"],
       "automerge": true
     }
   ]

@@ -19,6 +19,14 @@
     {
       "name": "context7",
       "source": "./plugins/context7"
+    },
+    {
+      "name": "self-improve",
+      "source": "./plugins/self-improve"
+    },
+    {
+      "name": "effort-router",
+      "source": "./plugins/effort-router"
     }
   ]
 }

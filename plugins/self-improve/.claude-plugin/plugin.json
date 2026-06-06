@@ -1,0 +1,12 @@
+{
+  "name": "self-improve",
+  "description": "セッションをまたいだ自己学習フィードバックループ。Stopフックで作業内容をジャーナル記録し、SessionStartフックで前回の文脈を自動注入。/retroで教訓をメモリへ書き戻す",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["self-learning", "feedback-loop", "memory", "hooks", "retrospective"],
+  "license": "MIT"
+}

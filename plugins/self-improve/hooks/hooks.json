@@ -1,0 +1,26 @@
+{
+  "description": "セッションのジャーナル記録(Stop)と前回文脈の注入(SessionStart)による自己学習フィードバックループ",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/journal.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/session-context.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

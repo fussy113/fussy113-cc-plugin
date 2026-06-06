@@ -9,10 +9,6 @@
   },
   "plugins": [
     {
-      "name": "hello-world",
-      "source": "./plugins/hello-world"
-    },
-    {
       "name": "github",
       "source": "./plugins/github"
     },

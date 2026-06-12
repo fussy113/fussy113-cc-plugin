@@ -4,6 +4,7 @@
     "config:recommended"
   ],
   "enabledManagers": ["github-actions", "mise", "npm"],
+  "minimumReleaseAge": "3 days",
   "platformAutomerge": true,
   "timezone": "Asia/Tokyo",
   "osvVulnerabilityAlerts": true,

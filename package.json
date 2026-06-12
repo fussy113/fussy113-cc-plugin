@@ -6,6 +6,6 @@
     "validate": "claude plugin validate ."
   },
   "devDependencies": {
-    "@anthropic-ai/claude-code": "2.1.165"
+    "@anthropic-ai/claude-code": "2.1.169"
   }
 }

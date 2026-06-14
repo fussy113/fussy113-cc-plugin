@@ -27,6 +27,10 @@
     {
       "name": "effort-router",
       "source": "./plugins/effort-router"
+    },
+    {
+      "name": "renovate",
+      "source": "./plugins/renovate"
     }
   ]
 }

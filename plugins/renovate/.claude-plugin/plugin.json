@@ -1,0 +1,12 @@
+{
+  "name": "renovate",
+  "description": "Renovate による依存関係自動更新の導入・チューニング・dependabot からの移行を支援する。CI pass 後の確実な自動マージ構成まで一括セットアップ",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["renovate", "dependabot", "dependency-management", "automerge", "branch-protection"],
+  "license": "MIT"
+}

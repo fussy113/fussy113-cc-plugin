@@ -1,0 +1,12 @@
+{
+  "name": "guardrail",
+  "description": "危険コマンドのブロックとシークレット書き込みの確認をフックで自動化する。PreToolUse(Bash)で rm -rf / や force push 等を遮断し、PreToolUse(Write/Edit)で APIキー/秘密鍵の直書きを検出して確認を促す",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["security", "guardrail", "hooks", "pretooluse", "secret-detection"],
+  "license": "MIT"
+}

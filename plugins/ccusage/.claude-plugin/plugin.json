@@ -1,0 +1,12 @@
+{
+  "name": "ccusage",
+  "description": "ccusage を使って Claude Code のトークン消費とコストを可視化する。日次/週次/月次/セッション別の使用量をターミナルに表示するスキルを提供する",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["ccusage", "token-usage", "cost", "observability", "token-efficiency"],
+  "license": "MIT"
+}

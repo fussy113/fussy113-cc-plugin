@@ -1,0 +1,12 @@
+{
+  "name": "tdd-cycle",
+  "description": "テスト駆動開発(RED→GREEN→REFACTOR)のサイクルを強制するスキルを提供する。失敗するテストを先に書き、最小実装で通し、リファクタする規律を守る",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["tdd", "test-driven-development", "testing", "discipline", "skill"],
+  "license": "MIT"
+}

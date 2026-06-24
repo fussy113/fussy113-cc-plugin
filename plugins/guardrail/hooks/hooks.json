@@ -1,0 +1,25 @@
+{
+  "description": "危険コマンドのブロック(PreToolUse/Bash)と、シークレット書き込みの確認(PreToolUse/Write・Edit)",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/destructive-guard.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/secret-guard.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

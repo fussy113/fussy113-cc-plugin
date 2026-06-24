@@ -1,0 +1,12 @@
+{
+  "name": "renovate",
+  "description": "Renovate による依存関係更新の自動化を支援する。Dependabot からの移行、cooldown/grouping/automerge ルールのチューニング、mise マネージャ有効化をスキルで提供する",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["renovate", "dependency-management", "automerge", "dependabot", "mise"],
+  "license": "MIT"
+}

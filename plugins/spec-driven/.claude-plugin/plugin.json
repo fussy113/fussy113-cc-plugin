@@ -1,0 +1,12 @@
+{
+  "name": "spec-driven",
+  "description": "仕様要件(テキスト/GitHub Issue/Notion/URL)を取り込んで壁打ちで方針を固め、effort-routerと連携して実装まで導く。/spec-driven:spec-clarify で起動",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/claude-code-marketplace",
+  "keywords": ["spec", "design", "planning", "implementation", "workflow"],
+  "license": "MIT"
+}

@@ -44,4 +44,4 @@ Write / Edit の書き込み内容に、以下の**高精度なパターン**が
 
 ## 関連
 
-- `tools-for-mac` の Stop/Notification 通知フックとは独立して動作し、干渉しません。
+- Stop / Notification など他イベントの通知フックとは独立して動作し、干渉しません(本プラグインは PreToolUse のみ)。

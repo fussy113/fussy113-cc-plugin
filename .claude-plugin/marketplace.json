@@ -13,48 +13,24 @@
       "source": "./plugins/github"
     },
     {
-      "name": "tools-for-mac",
-      "source": "./plugins/tools-for-mac"
-    },
-    {
-      "name": "context7",
-      "source": "./plugins/context7"
+      "name": "guardrail",
+      "source": "./plugins/guardrail"
     },
     {
       "name": "self-improve",
       "source": "./plugins/self-improve"
     },
     {
-      "name": "effort-router",
-      "source": "./plugins/effort-router"
+      "name": "dev-discipline",
+      "source": "./plugins/dev-discipline"
     },
     {
-      "name": "renovate",
-      "source": "./plugins/renovate"
+      "name": "dep-manager",
+      "source": "./plugins/dep-manager"
     },
     {
-      "name": "mise",
-      "source": "./plugins/mise"
-    },
-    {
-      "name": "guardrail",
-      "source": "./plugins/guardrail"
-    },
-    {
-      "name": "ccusage",
-      "source": "./plugins/ccusage"
-    },
-    {
-      "name": "systematic-debug",
-      "source": "./plugins/systematic-debug"
-    },
-    {
-      "name": "tdd-cycle",
-      "source": "./plugins/tdd-cycle"
-    },
-    {
-      "name": "spec-driven",
-      "source": "./plugins/spec-driven"
+      "name": "token-ops",
+      "source": "./plugins/token-ops"
     }
   ]
 }

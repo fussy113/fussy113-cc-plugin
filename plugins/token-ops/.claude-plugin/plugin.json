@@ -1,0 +1,12 @@
+{
+  "name": "token-ops",
+  "description": "Claude Code のトークン効率を最大化する2スキル。effort-router でタスク規模に応じた effort/モデルを事前見積もりし、ccusage で実際の消費コストを可視化する",
+  "version": "0.0.1",
+  "author": {
+    "name": "fussy113"
+  },
+  "homepage": "https://github.com/fussy113",
+  "repository": "https://github.com/fussy113/fussy113-cc-plugin",
+  "keywords": ["effort", "token-efficiency", "ccusage", "cost", "model-routing", "observability"],
+  "license": "MIT"
+}

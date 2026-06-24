@@ -2,7 +2,7 @@
 name: spec-clarify
 description: テキスト・GitHub Issue・Notion・URLから仕様要件を取り込み、壁打ち対話で曖昧さを解消して docs/spec/ に実装方針ドキュメントを策定する。実装着手前の要件深掘り・方針合意に使う
 argument-hint: "[仕様テキスト | GitHub Issue URL/#番号 | Notion URL | URL (optional)]"
-allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*) WebFetch
+allowed-tools: Read Glob Grep Write Bash(gh issue:*) Bash(gh repo:*) Bash(date:*) WebFetch mcp__claude_ai_Notion__*
 ---
 
 # /spec-driven:spec-clarify — 仕様取り込みから実装方針策定まで

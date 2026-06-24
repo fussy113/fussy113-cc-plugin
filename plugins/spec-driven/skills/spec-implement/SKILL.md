@@ -25,9 +25,9 @@ allowed-tools: Read Edit Write Glob Grep Bash(git status:*) Bash(git diff:*) Bas
 - `$ARGUMENTS` にパスがあればそれを `Read` する。
 - 無ければ `docs/spec/` の最新ファイルを探す:
   ```bash
-  ls -t docs/spec/*.md 2>/dev/null | head -1
+  ls -t docs/spec/*.md 2>/dev/null   # 更新時刻の新しい順。先頭が最新
   ```
-  見つかったファイルをユーザーに提示し、「これでよいか」を確認してから読む。
+  一覧の先頭(最新)のファイルをユーザーに提示し、「これでよいか」を確認してから読む。
 - どこにも見つからなければ、`/spec-driven:spec-clarify` で先に方針を策定するよう案内して中断する。
 
 読み込んだら「機能要件・受け入れ条件・スコープ外・タスク分解」を要約してユーザーに提示する。
@@ -53,7 +53,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(git status:*) Bash(git diff:*) Bas
 - 方針の「タスク分解」の順に、1タスクずつ実装する。
 - 各タスク完了後、プロジェクトのテスト/リンタを検出して実行する(`package.json` の `scripts`、`Makefile`、`pyproject.toml` 等)。失敗したら次に進まず修正する。
 - 1度に複数の無関係な変更を混ぜない。原因追跡が必要なバグに当たったら `/systematic-debug:systematic-debug` を、テストを先に書きたい場合は `/tdd-cycle:tdd-cycle` を併用する。
-- **`git add` / `commit` / `push` はユーザーが明示的に指示するまで実行しない。**
+- **`git add` / `commit` / `push` はこのスキルでは行わない(コミットが必要ならユーザーに委ねる)。**
 
 ### 5. 完了報告
 
@@ -92,7 +92,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(git status:*) Bash(git diff:*) Bas
 
 - スコープ外の実装・無関係なリファクタリングはしない。
 - 各タスク後の検証(テスト/リンタ)を飛ばさない。結果は成否にかかわらず報告する。
-- コミット・プッシュは明示指示があるまで行わない。
+- コミット・プッシュはこのスキルでは行わない(必要ならユーザーが手動で行う)。
 
 ## 使用例
 

@@ -27,6 +27,30 @@
     {
       "name": "effort-router",
       "source": "./plugins/effort-router"
+    },
+    {
+      "name": "renovate",
+      "source": "./plugins/renovate"
+    },
+    {
+      "name": "mise",
+      "source": "./plugins/mise"
+    },
+    {
+      "name": "guardrail",
+      "source": "./plugins/guardrail"
+    },
+    {
+      "name": "ccusage",
+      "source": "./plugins/ccusage"
+    },
+    {
+      "name": "systematic-debug",
+      "source": "./plugins/systematic-debug"
+    },
+    {
+      "name": "tdd-cycle",
+      "source": "./plugins/tdd-cycle"
     }
   ]
 }

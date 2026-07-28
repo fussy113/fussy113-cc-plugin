@@ -70,6 +70,11 @@ allowed-tools: Read Edit Bash(gh:*) Bash(git:*)
    - 次の確認: branch protection の required status checks / Renovate App の導入状況
    ```
 
+## 注意
+
+- **生成する `renovate.json` に、上記の既定テンプレと `$ARGUMENTS` の要望を超えるルールを盛らない**。追加したいルールに気づいたら提案までに留め、適用は `/dep-manager:tune-renovate` に渡す。
+- `.github/dependabot.yml` の削除は**必ずユーザーの確認を得てから**行う(手順4)。
+
 ## エラーハンドリング
 
 - `dependabot.yml` が無い → 「Dependabot 設定が見つかりません。ゼロから `renovate.json` を作成しますか?」と確認。

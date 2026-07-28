@@ -16,7 +16,7 @@ allowed-tools: Read Glob Grep Bash(git status:*) Bash(git diff:*)
 
 | つまみ | コマンド | 効果 |
 |---|---|---|
-| effort レベル | `/effort <level>` | `low` / `medium` / `high`(既定) / `xhigh` / `max`。**応答の全トークン**(本文・ツール呼び出し・思考)の量を制御 |
+| effort レベル | `/effort <level>` | `low` / `medium` / `high`(既定) / `xhigh` / `max`。**応答の全トークン**(本文・ツール呼び出し・思考)に影響する。ただし可視応答の長さは確実には縮まらない(→「effort で制御できないもの」) |
 | ultracode | `/effort` → ultracode | `xhigh` 相当 ＋ **dynamic workflows** の自動オーケストレーション (セッション限定) |
 | モデル | `/model <name>` | `haiku`(軽量) / `sonnet`(中) / `opus`(高) |
 | fast mode | `/fast` | Opus を高速化(Opus 5 / 4.8 / 4.7 で利用可。小さいモデルには劣化しない)。**1トークン単価は上がる**。対話的反復向き、長時間自律処理には不向き |

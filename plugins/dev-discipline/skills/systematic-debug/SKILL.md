@@ -48,6 +48,8 @@ allowed-tools: Read Grep Glob Bash(git log:*) Bash(git diff:*) Bash(git status:*
 
 ## 出力フォーマット
 
+観測事実と仮説は要点だけを書く。ログやスタックトレースは根拠になる数行だけ引用し、全文を貼らない。
+
 ```markdown
 # systematic-debug
 

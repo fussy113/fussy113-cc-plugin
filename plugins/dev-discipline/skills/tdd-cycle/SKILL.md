@@ -47,6 +47,8 @@ allowed-tools: Read Edit Bash(npm test:*) Bash(pnpm test:*) Bash(bundle exec rsp
 
 ## 出力フォーマット
 
+各サイクルは見出しを除き3行以内で報告する(テストコードや実装の全文は貼らない)。
+
 ```markdown
 # tdd-cycle: [機能名]
 

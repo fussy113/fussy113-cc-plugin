@@ -30,6 +30,7 @@ allowed-tools: Read Edit
 
 ## 注意
 
+- **このスキルの作業範囲は `enabledManagers` への `"mise"` 追加だけ**。cooldown・automerge・grouping などの他ルールは、気づいた改善点があっても変更しない。必要なら `/dep-manager:tune-renovate` を案内する。
 - `enabledManagers` を**明示すると、列挙したマネージャ以外は無効化**される。既に npm / github-actions 等を使っている場合は、それらを必ず配列に残すこと(取りこぼし防止)。
 - `mise` で管理するツールに `minimumReleaseAge` を効かせたい場合は `/dep-manager:tune-renovate` で cooldown を設定する。
 

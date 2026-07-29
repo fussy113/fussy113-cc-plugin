@@ -57,6 +57,7 @@ allowed-tools: Read Edit
 
 ## 注意
 
+- **診断(提示)と適用を分ける**。手順2で気づいた改善点は提示してよいが、**実際に書き込むのは要望された範囲だけ**。それ以外は「次にやるなら」として提案に留め、勝手に反映しない。
 - **automerge と branch protection はセット**。required status checks が無いと、CI を待たずにマージされうる。
 - cooldown(`minimumReleaseAge`)は便利だが、長すぎると security 更新まで遅れる。security は `vulnerabilityAlerts` で別経路にする。
 - グルーピングしすぎると 1 PR の差分が大きくなり、原因切り分けが難しくなる。粒度に注意。
